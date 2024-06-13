@@ -1,7 +1,5 @@
-// Import da biblioteca do prima client
 const { PrismaClient } = require('@prisma/client')
 
-// Instanciando a classe do prisma client
 const prisma = new PrismaClient()
 
 const selectAllGeneros = async function(){

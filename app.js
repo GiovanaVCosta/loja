@@ -200,37 +200,6 @@ app.put('/v1/loja/atualizar/genero/:id', cors(), jsonBodyParser, async function(
     response.status(resultDados.status_code)
 })
 
-// FILTRO
-
-app.get('/v1/loja/produto/genero/:id', cors(), async function(request, response, next){
-
-    let idGenero = request.params.id
-
-    let dadosProduto = await produtosController.getBuscarProdutoPorGenero(idGenero)
-
-    if(dadosProduto){
-        response.json(dadosProduto)
-        response.status(200)
-    } else{
-        response.json({message: 'NADA ENCONTRADO'})
-        response.status(404)
-    }
-})
-app.post('/v1/loja/produto/genero', cors(), jsonBodyParser, async function(request, response, next){
-
-    let contentType = request.headers['content-type']
-    let dadosBody = request.body
-    let resultDados = await produtosController.setInserirProdutoGenero(dadosBody, contentType)
-
-    response.json(resultDados)
-    response.status(resultDados.status_code)
-})
-
-
-
-
-
-
 
 app.listen(8080, function(){
     console.log('A API funcionando')

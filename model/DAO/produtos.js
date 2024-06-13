@@ -1,7 +1,5 @@
-// Import da biblioteca do prima client
 const { PrismaClient } = require('@prisma/client')
 
-// Instanciando a classe do prisma client
 const prisma = new PrismaClient()
 
 const selectAllProdutos = async function(){
@@ -43,7 +41,7 @@ const insertNovoProduto = async function(dadosProduto){
 
     try {
         
-        let sql = `INSERT INTO tbl_produto (nome, descricao, valor, imagem, id_categoria) VALUES
+        let sql = `INSERT INTO tbl_produto (Nome, Descricao, Valor, Imagem, ID_Categoria) VALUES
         (
             '${dadosProduto.nome}',
             '${dadosProduto.descricao}',

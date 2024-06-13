@@ -22,7 +22,7 @@ const getListarProdutos = async function(){
         }
 
     } else{
-        console.log("aaaaaaaaaaa")
+        console.log("aaaaaaaaaaa errooo akiii")
         return config.ERROR_INTERNAL_SERVER_DB
     }
 }
